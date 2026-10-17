@@ -1,0 +1,40 @@
+# Environments and secrets
+.venv/
+venv/
+env/
+.env
+*.pem
+*.key
+id_rsa*
+secrets.toml
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data: raw datasets may not be redistributable - never commit them
+data/raw/*
+!data/raw/.gitkeep
+data/cleaned/*
+!data/cleaned/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.db
+*.sqlite
+
+# Models are rebuilt per machine (scikit-learn version / CPU architecture)
+models/*
+!models/.gitkeep
+
+# Generated reports (regenerate with the CLI commands in README)
+reports/*
+!reports/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
