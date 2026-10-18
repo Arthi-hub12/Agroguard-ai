@@ -145,7 +145,7 @@ def clean_dataframe(df: pd.DataFrame, cfg: CleaningConfig = settings.CLEANING,
         if pd.api.types.is_datetime64_any_dtype(work[c]):
             continue
         before_missing = int(work[c].isna().sum())
-        parsed = pd.to_datetime(work[c], errors="coerce", format="mixed")
+        parsed = pd.to_datetime(work[c], errors="coerce")
         bad = int(parsed.isna().sum()) - before_missing
         bad_dates_total += max(bad, 0)
         work[c] = parsed

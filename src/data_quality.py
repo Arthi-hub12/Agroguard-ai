@@ -35,7 +35,7 @@ def detect_date_columns(df: pd.DataFrame, cfg=settings.CLEANING) -> list:
         sample = series.dropna().astype(str).head(200)
         if sample.empty:
             continue
-        parsed = pd.to_datetime(sample, errors="coerce", format="mixed")
+        parsed = pd.to_datetime(sample, errors="coerce")
         ratio = float(parsed.notna().mean())
         # A column NAMED like a date is accepted at a lower parse rate (>= 50%) so that
         # unparseable values get reported by the cleaning step instead of being silently
